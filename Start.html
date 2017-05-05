@@ -10,13 +10,7 @@
     
     .icon {
       width: 16px;
-    }
-    
-    .time {
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-    }
+    }0
     
     html { 
       background: url(jpg/win95.jpg) no-repeat center center fixed; 
@@ -27,15 +21,37 @@
     }
 
   </style>
+  
+  <script>
+    function startTime() {
+      bottom: 0px;
+      right: 0px;
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+    
+    bottom:
+      function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+  
+  </style>
 
   <head>
     <title>The Start Button!</title>
     <link href="ico/win95.ico" rel="shortcut icon" />
   </head>
-  <body>
+  <body >
     <div fluid>
       <div container="col-xs-6">
-          <script class="time" href="js/time.js">
           <a href="microsoft.html" alt="https://www.microsoft.com/en-us/"><button style="background: ico/win95.ico" class="start"><img src="ico/win95.ico" class="icon"> Start</button></a>
       </div>
     </div>
